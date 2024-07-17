@@ -29,13 +29,12 @@ public class Program {
 		System.out.print("E-mail: ");
 		String cliEmail = sc.nextLine();
 		System.out.print("Birth date: ");
-		String cliBirth = sc.nextLine();
-		Date data = sdf2.parse(cliBirth);
-		Client client = new Client(cliName, cliEmail, data);
+		Date cliBirth = sdf2.parse(sc.nextLine());
+		Client client = new Client(cliName, cliEmail, cliBirth);
 		System.out.println("Enter order data: ");
 		System.out.print("Status: ");
 		OrderStatus orderStatus = OrderStatus.valueOf(sc.next());
-		Order order = new Order(date, orderStatus, client);
+		Order order = new Order(new Date() , orderStatus, client);
 		System.out.print("How many items to this order: ");
 		int n = sc.nextInt();
 		sc.nextLine();
